@@ -1,0 +1,16 @@
+{
+  "name": "com.glase.easysaveload",
+  "displayName": "EasySaveLoad",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "description": "Provides a comfortable saving system.",
+  "author": {
+    "name": "glase"
+  },
+
+    "keywords": [
+    ],
+
+    "dependencies": {
+    },
+}
