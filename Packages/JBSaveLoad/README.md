@@ -1,7 +1,7 @@
 # ご使用方法
 
 1. 初めにusing JBSaveLoadLib;と記述する。
-2. SaveLoad.Instanceからライブラリを利用できます。
+2. JBSaveLoadから各種関数を利用できます。
 
 ### 例
 
