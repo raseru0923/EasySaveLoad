@@ -1,12 +1,12 @@
 # ご使用方法
 
-1. 初めにusing EasySaveLoadLib;と記述する。
+1. 初めにusing JBSaveLoadLib;と記述する。
 2. SaveLoad.Instanceからライブラリを利用できます。
 
 ### 例
 
 using UnityEngine;
-using EasySaveLoadLib; //①
+using JBSaveLoadLib; //1
 
 public class Test
 {
@@ -15,7 +15,7 @@ public class Test
 
 	void Start()
 	{
-		EasySaveLoad.Instance.Save(data, filePath); //②のセーブ関数を利用
+		JBSaveLoad.Save(data, filePath); //2のセーブ関数を利用
 	}
 }
 
@@ -23,7 +23,7 @@ public class Test
 # セーブしたい
 
 1. セーブしたいデータを持つSerializable属性を付与した任意の「class」及び「struct」を用意する。
-2. SaveLoad.Instance.Save(①で用意したデータ,セーブ先のファイルパス)
+2. JBSaveLoad.Save(1で用意したデータ,セーブ先のファイルパス)
 　※ファイル名は"任意名.bin"で用意してください。
 　※存在しないディレクトリ名(フォルダ名)を使用した場合自動的にディレクトリが生成されます。
 　※存在しないファイルを使用した場合も自動的にファイルが生成されます。
@@ -38,11 +38,11 @@ public class Test
 
 	void Start()
 	{
-		EasySaveLoad.Instance.Save(data, filePath); //②
+		JBSaveLoad.Save(data, filePath); //2
 	}
 }
 
-[System.Serializable] //①
+[System.Serializable] //1
 public struct CharacterParameter
 {
 	public float Speed;
@@ -53,20 +53,20 @@ public struct CharacterParameter
 # ロードしたい
 
 1. ロードしたいデータと同じ型(「class」及び「struct」)を持った変数を用意する。
-2. SaveLoad.Instance.Load(out ロードしたデータを受け取る①, セーブデータの入ったファイルのパス)
+2. SaveLoad.Instance.Load(out ロードしたデータを受け取る1, セーブデータの入ったファイルのパス)
 　※戻り値はロードの結果です(true=成功false=失敗)。
-　※ロードの成功失敗にかかわらず使用前の①のデータは書き換えられます。
+　※ロードの成功失敗にかかわらず使用前の1のデータは書き換えられます。
 
 ### 例
 
 public class Test
 {
-	CharacterParameter data; //①
+	CharacterParameter data; //1
 	string filePath = "C:/SaveDatas/PlayerParameter.bin";
 
 	void Start()
 	{
-		if(EasySaveLoad.Instance.Load(out data, filePath)/*②*/)
+		if(JBSaveLoad.Load(out data, filePath)/*2*/)
 		{
 			Debug.Log("成功！");
 			return;

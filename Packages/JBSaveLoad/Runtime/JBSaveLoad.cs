@@ -1,12 +1,11 @@
 using System.IO;
-using System;
 using System.Text;
 using System.Linq;
 using UnityEngine;
 
-namespace EasySaveLoadLib
+namespace JBSaveLoadLib
 {
-    public static class EasySaveLoad
+    public static class JBSaveLoad
     {
         private static readonly byte KEY = 0b0001_1010;
 

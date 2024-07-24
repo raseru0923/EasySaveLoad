@@ -1,6 +1,6 @@
 {
-  "name": "com.glase.easysaveloadlibrary",
-  "displayName": "EasySaveLoad",
+  "name": "com.glase.jbsaveloadlibrary",
+  "displayName": "JBSaveLoad",
   "version": "1.0.0",
   "unity": "2022.3",
   "description": "Provides a comfortable saving system.",

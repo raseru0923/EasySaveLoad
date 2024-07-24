@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.glase.easysaveloadlibrary": {
-      "version": "file:EasySaveLoad",
+    "com.glase.jbsaveloadlibrary": {
+      "version": "file:JBSaveLoad",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
