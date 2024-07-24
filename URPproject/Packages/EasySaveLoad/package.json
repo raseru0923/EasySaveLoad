@@ -6,11 +6,5 @@
   "description": "Provides a comfortable saving system.",
   "author": {
     "name": "glase"
-  },
-
-    "keywords": [
-    ],
-
-    "dependencies": {
-    },
+  }
 }
