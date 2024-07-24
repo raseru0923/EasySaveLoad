@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.glase.easysaveload": {
+    "com.glase.easysaveloadlibrary": {
       "version": "file:EasySaveLoad",
       "depth": 0,
       "source": "embedded",
