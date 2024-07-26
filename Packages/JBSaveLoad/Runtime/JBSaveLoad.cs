@@ -54,7 +54,7 @@ namespace JBSaveLoadLib
             }
         }
         /// <summary>
-        /// データをロードします
+        /// データをロードします。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>
@@ -85,6 +85,40 @@ namespace JBSaveLoadLib
                         data = JsonUtility.FromJson<T>(text);
                     }
                 }
+            }
+            catch
+            {
+                data = default;
+                Debug.LogError("エラーが発生しました");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// byteデータをロードします。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bytes"></param>
+        /// <returns>true=読み込み成功 false=読み込み失敗</returns>
+        public static bool Load<T>(out T data, byte[] bytes)
+        {
+            try
+            {
+                bytes = bytes.Select(x => { x ^= KEY; return x; }).ToArray();
+                // ファイル読み込みと文字化け防止
+                var text = Encoding.UTF8.GetString(bytes);
+                // 情報がない場合はデータのデシリアライズを行わない
+                if (text == "" || text == null)
+                {
+                    data = default;
+                    Debug.LogError("データが存在しません");
+                    return false;
+                }
+                var byteContent = "bytes";
+                bytes.Select(x => x.ToString("x")).ToList().ForEach(x => { byteContent += ',' + x; });
+                data = JsonUtility.FromJson<T>(text);
             }
             catch
             {
